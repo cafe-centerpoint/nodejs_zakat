@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
 
     res.render('index', {
         nama: 'Nona Cantik nan Sederhana',
-        title: 'Home',
+        title: 'Cafe Center Point',
         mahasiswa,
         coba(){
             return coba();
@@ -70,15 +70,11 @@ app.get('/contact', (req, res) => {
     });
 });
 
-app.get('/product/:id', (req, res) => {
-    res.send(`Product ID: ${req.params.id} <br> ${req.query.category}`);
-});
-
 app.use('/', (req, res) => {
     res.status(404);
     res.send('<h1>404. Page not found.<h1>');
 });
 
 app.listen(port, () => {
-    console.log("Listening to port 3000....")
+    console.log("Listening....")
 });
