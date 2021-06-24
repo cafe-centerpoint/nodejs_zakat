@@ -1,5 +1,5 @@
 {
-  "name": "express_view_engine_15",
+  "name": "1.0.0",
   "version": "1.0.0",
   "description": "express view engine untuk memudahkan layouting",
   "main": "app.js",
@@ -15,5 +15,14 @@
     "express-ejs-layouts": "^2.5.1",
     "nodemon": "^2.0.7",
     "save-dev": "^0.0.1-security"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cafe-centerpoint/centerpoint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cafe-centerpoint/centerpoint/issues"
+  },
+  "homepage": "https://github.com/cafe-centerpoint/centerpoint#readme"
 }
