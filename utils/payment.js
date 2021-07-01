@@ -7,14 +7,14 @@ if (!fs.existsSync(dirPath)) {
 }
 
 // mmebuat file contact.json jika belum ada
-const dataPath = './data/contacts.json';
+const dataPath = './data/zakat.json';
 if (!fs.existsSync(dataPath)) {
     fs.writeFileSync(dataPath, '[]', 'utf-8');
 }
 
 // mengambil/mengakses data yang ada dalam contacts.json
 const loadContacts = () => {
-    const fileBuffer = fs.readFileSync('data/contacts.json', 'utf-8');
+    const fileBuffer = fs.readFileSync('data/zakat.json', 'utf-8');
     const contacts = JSON.parse(fileBuffer);
     return contacts;
 }
@@ -28,7 +28,7 @@ const findContact = (nama) => {
 
 // menuliskan/menimpa file contacts.json dengan data yang baru
 const saveContacts = (contacts) => {
-    fs.writeFileSync('data/contacts.json', JSON.stringify(contacts));
+    fs.writeFileSync('data/zakat.json', JSON.stringify(contacts));
 }
 
 // menambahkan data yang baru
@@ -45,5 +45,4 @@ const cekDuplikat = (nama) => {
     return contacts.find((contact) => contact.nama === nama);
 }
 
-
-module.exports = { loadContacts, findContact, addContact, cekDuplikat }
+module.exports = { addContact, cekDuplikat };

@@ -1,41 +1,105 @@
-<div class="container mb-4">
-  <p class="info mt-4">Cafe Center Point merupakan cafe, resto, dan catering dengan nuansa persawahan di tengah perkotaan sehingga menjadi pilihan tepat berwisata kuliner yang menyenangkan dan menyehatkan.</p>
-  <img src="images/lokasi-ccp.jpg" alt="" class="w3-image">
+<div class="container mb-4 w3-georgia ">
+  <div class="row">
+      <div class="col-md-6">
+          <h3 class="mt-4 w3-center"><i><%= title %></i></h3>
+          
+           <% if (typeof errors != 'undefined') { %>
+            <div class="alert alert-danger" role="alert">
+                 <ul>
+                   <% errors.forEach( error => { %>
+                     <li><%= error.msg %> </li>                 
+                   <% }) %>
+               </ul>
+            </div>
+           <% } %>
+          <br>
+          <p><b>SILAHKAN ISI DATA BERIKUT</b></p>
+          <form method="post" action="/" class="mt-4 w3-cursive">
+            <div class="w3-border w3-padding-large mb-4 w3-border-orange">
+              <h6><b>INFORMASI PERSONAL</b></h6>
+                <div class="mb-3">
+                  <label for="namalengkap" class="form-label">Nama Lengkap Anda: </label>
+                  <input type="text" class="form-control w3-input" id="namalengkap" name="namalengkap" required>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Alamat email: </label>
+                  <input type="text" class="form-control w3-input" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="noHP" class="form-label">No. HP: </label>
+                  <input type="text" class="form-control w3-input" id="noHP" name="noHP" required>
+                </div>
+            </div>
+            <div class="w3-border w3-padding-large mb-4 w3-border-orange">
+              <h6><b>INFORMASI ZAKAT</b></h6>
+              <div class="mb-3">
+                <label for="nama" class="form-label">Nama Lembaga: </label>
+                <input type="text" class="form-control w3-input" id="nama" name="nama" value="Badan Amil Zakat Nasional (BAZNAS)" readonly>
+              </div>
+              <br>
+              <div class="mb-3">
+                <label class="form-label">Pilih Nama Cabang: </label>
+                <select class="w3-select" name="provinsi" required>
+                  <option value="1">Nanggroe Aceh Darussalam</option>
+                  <option value="2">Sumatera Utara</option>
+                  <option value="3">Sumatera Barat</option>
+                  <option value="4">Riau</option>
+                  <option value="5">Jambi</option>
+                  <option value="6">Sumatera Selatan</option>
+                  <option value="7">Bengkulu</option>
+                  <option value="8">Lampung</option>
+                  <option value="9">Kep. Bangka Belitung</option>
+                  <option value="10">Kep Riau</option>
+                  <option value="11">DKI Jakarta</option>
+                  <option value="12">Jawa Barat</option>
+                  <option value="13">Jawa Tengah</option>
+                  <option value="14">Daerah Istimewa Yogyakarta</option>
+                  <option value="15">Jawa Timur</option>
+                  <option value="16">Banten</option>
+                  <option value="17">Bali</option>
+                  <option value="18">Nusa Tenggara Barat</option>
+                  <option value="19">Nusa Tenggara Timur</option>
+                  <option value="20">Kalimantan Barat</option>
+                  <option value="21">Kalimantan Tengah</option>
+                  <option value="22">Kalimanta Selatan</option>
+                  <option value="23">Kalimantan Timur</option>
+                  <option value="24">Sulawesi Utara</option>
+                  <option value="25">Sulawesi Tengah</option>
+                  <option value="26">Sulawesi Selatan</option>
+                  <option value="27">Sulawesi Tenggara</option>
+                  <option value="28">Gorontalo </option>
+                  <option value="29">Sulawesi Barat</option>
+                  <option value="30">Maluku</option>
+                  <option value="31">Maluku Utara</option>
+                  <option value="32">Papua</option>
+                </select>
+              </div>
+              <br>
+              <div class="mb-3">
+                <label class="form-label">Pilih Jenis Zakat: </label>
+                <select class="w3-select" name="jeniszakat" required>
+                  <option value="fitrah">Zakat Fitrah (Masukkan nominal 50000)</option>
+                  <option value="maal">Zakat Maal (Masukkan nominal sesuai haul )</option>
+                </select>
+             </div><br>
+              <div class="mb-3">
+                  <label for="nominal" class="form-label">Masukkan Nominal (hanya angka saja): </label>
+                  <input type="nominal" class="form-control w3-input" id="nominal" name="nominal" placeholder="Rp. " required>
+               </div>
+               <br>
+              <div class="mb-3">
+                <label class="form-label">Pilih Metode Pembayaran: </label>
+                <select class="w3-select" name="metode" required>
+                  <option value="gopay">Gopay</option>
+                  <option value="shopee_pay">Shoppe Pay</option>
+                  <option value="others">Lainnya</option>
+                </select>
+             </div>
 
-  <!-- Food & Drink Section -->
-    <div class="w3-container w3-padding-32" id="about">
-      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-cursive">Selamat datang di Cafe kami...</h3>
-      <p>Disini tersedia berbagai jenis menu makanan dan minuman yang istimewa, murah meriah, lezat, dan Alhamdulillah halal lagi baik..</p>
-    </div>
-
-    <div class="w3-row-padding">
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <img src="images/merdeka.jpg" alt="John" style="width:100%">
-        <h3>Paket Merdeka Makan</h3><br>
-        <p>Paket Merdeka Makan (PMM) merupakan makanan siap saji dengan layanan self-service. Harga sangat terjangkau. Pilih sendiri makanan sesuka hati Anda, nikmati sepuasnya.</p><br>
-        <a href='https://api.whatsapp.com/send/?phone=6285298595111&text=Assalamualaykum. Saya mau pesan paket merdeka makan...&app_absent=0' style="text-decoration: none;">
-        <p><button class="w3-button w3-green w3-block">Pesan PMM Sekarang <i class="fa fa-whatsapp"></i></button></p></a>
+            </div>
+              <button id="pay_button" type="submit" class="btn w3-orange w3-right mt-4 mb-4">Lanjutkan</button>
+            </form>
       </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <img src="images/eksklusif.jpg" alt="Jane" style="width:100%">
-        <h3>Paket Eksklusif</h3><br>
-        <p>Pesan khusus makanan favorite Anda. Paket eksklusif ikan bakar, ayam bakar, iloni, ikan woku, dan makanan khas lainnya yang disajikan secara istimewa. Rasa dan sajiannya menggugah selera.</p>
-        <a href='https://api.whatsapp.com/send/?phone=6285298595111&text=Assalamualaykum. Saya mau pesan paket eksklusif...&app_absent=0' style="text-decoration: none;">
-          <p><button class="w3-button w3-green w3-block">Pesan Eksklusif Sekarang <i class="fa fa-whatsapp"></i></button></p></a>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <img src="images/coffeeshop.jpg" alt="Mike" style="width:100%">
-        <h4>Coffee Shop & Meeting Room</h4>
-        <p>Lokasi dekat dengan Tugu paling terkenal di Gorontalo plus suasana alam hijau nan permai yang dilengkapi Wi-FI berkecapatan tinggi pastinya sangat pas dengan kebutuhan Anda.</p>
-        <a href='https://api.whatsapp.com/send/?phone=6285298595111&text=Assalamualaykum. Saya mau pesan menu coffeeshop...&app_absent=0' style="text-decoration: none;">
-          <p><button class="w3-button w3-green w3-block">Reservasi Tempat Sekarang <i class="fa fa-whatsapp"></i></button></p></a>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <img src="images/catering.jpg" alt="Dan" style="width:100%">
-        <h3>Catering</h3><br>
-        <p>Kami juga menerima pesanan catering untuk acara-acara seperti aqiqah, ulang tahun, ujian di kampus, atau acara kantoran. Hubungi kami dan pesan menu yang Anda inginkan.</p>
-        <a href='https://api.whatsapp.com/send/?phone=6285298595111&text=Assalamualaykum. Saya mau pesan paket catering untuk ...&app_absent=0' style="text-decoration: none;">
-          <p><button class="w3-button w3-green w3-block">Pesan Catering Sekarang <i class="fa fa-whatsapp"></i></button></p></a>
-      </div>
-    </div>
   </div>
+</div>
+
